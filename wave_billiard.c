@@ -43,45 +43,29 @@
 #include <omp.h>
 #include <time.h>
 
-#define MOVIE 0         /* set to 1 to generate movie */
+#define MOVIE 1         /* set to 1 to generate movie */
 #define DOUBLE_MOVIE 1  /* set to 1 to produce movies for wave height and energy simultaneously */
 #define SAVE_MEMORY 1   /* set to 1 to save memory when writing tiff images */
 #define NO_EXTRA_BUFFER_SWAP 1    /* some OS require one less buffer swap when recording images */
 
 #define VARIABLE_IOR 1      /* set to 1 for a variable index of refraction */
 #define IOR 5               /* choice of index of refraction, see list in global_pdes.c */
-#define IOR_TOTAL_TURNS 1.5 /* total angle of rotation for IOR_PERIODIC_WELLS_ROTATING */
 #define MANDEL_IOR_SCALE -0.05   /* parameter controlling dependence of IoR on Mandelbrot escape speed */
 
 
 /* General geometrical parameters */
 
-// #define WINWIDTH 	1920  /* window width */
-// #define WINHEIGHT 	1150  /* window height */
-// #define NX 3840          /* number of grid points on x axis */
-// #define NY 2300          /* number of grid points on y axis */
-// 
-// #define XMIN -2.0
-// #define XMAX 2.0	/* x interval */
-// #define YMIN -1.197916667
-// #define YMAX 1.197916667	/* y interval for 9/16 aspect ratio */
-
-#define HIGHRES 1       /* set to 1 if resolution of grid is double that of displayed image */
-
-#define WINWIDTH 	1280  /* window width */
-#define WINHEIGHT 	720   /* window height */
-
-// #define NX 640          /* number of grid points on x axis */
-// #define NY 360          /* number of grid points on y axis */
-// #define NX 1280          /* number of grid points on x axis */
-// #define NY 720          /* number of grid points on y axis */
-#define NX 2560          /* number of grid points on x axis */
-#define NY 1440          /* number of grid points on y axis */
+#define WINWIDTH 	1920  /* window width */
+#define WINHEIGHT 	1150  /* window height */
+#define NX 3840          /* number of grid points on x axis */
+#define NY 2300          /* number of grid points on y axis */
 
 #define XMIN -2.0
-#define XMAX 2.0	/* x interval  */
-#define YMIN -1.125
-#define YMAX 1.125	/* y interval for 9/16 aspect ratio */
+#define XMAX 2.0	/* x interval */
+#define YMIN -1.197916667
+#define YMAX 1.197916667	/* y interval for 9/16 aspect ratio */
+
+#define HIGHRES 1       /* set to 1 if resolution of grid is double that of displayed image */
 
 #define JULIA_SCALE 1.0 /* scaling for Julia sets */
 
@@ -108,8 +92,8 @@
 #define MANDELLEVEL 1000    /* iteration level for Mandelbrot set */
 #define MANDELLIMIT 10.0    /* limit value for approximation of Mandelbrot set */
 #define FOCI 1              /* set to 1 to draw focal points of ellipse */
-#define NGRIDX 12            /* number of grid point for grid of disks */
-#define NGRIDY 12            /* number of grid point for grid of disks */
+#define NGRIDX 14           /* number of grid point for grid of disks */
+#define NGRIDY 8            /* number of grid point for grid of disks */
 
 #define X_SHOOTER -0.2
 #define Y_SHOOTER -0.6
@@ -136,7 +120,7 @@
 #define AMPLITUDE 0.8      /* amplitude of periodic excitation */ 
 #define ACHIRP 0.25        /* acceleration coefficient in chirp */
 #define DAMPING 0.0        /* damping of periodic excitation */
-#define COURANT 0.04       /* Courant number */
+#define COURANT 0.05       /* Courant number */
 #define COURANTB 0.0       /* Courant number in medium B */
 #define GAMMA 0.0          /* damping factor in wave equation */
 #define GAMMAB 0.0         /* damping factor in wave equation */
@@ -154,20 +138,14 @@
 #define OSCILLATING_SOURCE_PERIOD 50     /* period of oscillating source */
 #define ALTERNATE_OSCILLATING_SOURCE 1  /* set to 1 to alternate sign of oscillating source */
 
-#define ADD_WAVE_PACKET_SOURCES 0       /* set to 1 to add several sources emitting wave packets */
-#define WAVE_PACKET_SOURCE_TYPE 1       /* type of wave packet sources */
-#define N_WAVE_PACKETS 15               /* number of wave packets */
-#define WAVE_PACKET_RADIUS 20            /* radius of wave packets */
-
 /* Boundary conditions, see list in global_pdes.c  */
 
 #define B_COND 2
 
 /* Parameters for length and speed of simulation */
 
-#define NSTEPS 1800       /* number of frames of movie */
-// #define NSTEPS 500       /* number of frames of movie */
-#define NVID 10           /* number of iterations between images displayed on screen */
+#define NSTEPS 2700       /* number of frames of movie */
+#define NVID 6            /* number of iterations between images displayed on screen */
 #define NSEG 1000         /* number of segments of boundary */
 #define INITIAL_TIME 0      /* time after which to start saving frames */
 #define BOUNDARY_WIDTH 2    /* width of billiard boundary */
@@ -183,20 +161,18 @@
 
 /* Parameters of initial condition */
 
-#define INITIAL_AMP 0.5            /* amplitude of initial condition */
-#define INITIAL_VARIANCE 0.0003    /* variance of initial condition */
-#define INITIAL_WAVELENGTH  0.015  /* wavelength of initial condition */
+#define INITIAL_AMP 0.25            /* amplitude of initial condition */
+#define INITIAL_VARIANCE 0.00015    /* variance of initial condition */
+#define INITIAL_WAVELENGTH  0.0075  /* wavelength of initial condition */
 
 /* Plot type, see list in global_pdes.c  */
 
 #define PLOT 0
-// #define PLOT 7
 
 #define PLOT_B 5        /* plot type for second movie */
 
 /* Color schemes */
 
-// #define COLOR_PALETTE 15     /* Color palette, see list in global_pdes.c  */
 #define COLOR_PALETTE 17    /* Color palette, see list in global_pdes.c  */
 #define COLOR_PALETTE_B 13    /* Color palette, see list in global_pdes.c  */
 
@@ -209,7 +185,7 @@
 #define PHASE_FACTOR 1.0       /* factor in computation of phase in color scheme P_3D_PHASE */
 #define PHASE_SHIFT 0.0      /* shift of phase in color scheme P_3D_PHASE */
 #define ATTENUATION 0.0  /* exponential attenuation coefficient of contrast with time */
-#define E_SCALE 60.0     /* scaling factor for energy representation */
+#define E_SCALE 75.0     /* scaling factor for energy representation */
 #define LOG_SCALE 1.0     /* scaling factor for energy log representation */
 #define LOG_SHIFT 3.5     /* shift of colors on log scale */
 #define FLUX_SCALE 5.0e3    /* scaling factor for enegy flux represtnation */
@@ -222,7 +198,7 @@
 #define HUEMEAN 180.0    /* mean value of hue for color scheme C_HUE */
 #define HUEAMP -180.0      /* amplitude of variation of hue for color scheme C_HUE */
 
-#define DRAW_COLOR_SCHEME 0    /* set to 1 to plot the color scheme */
+#define DRAW_COLOR_SCHEME 1    /* set to 1 to plot the color scheme */
 #define COLORBAR_RANGE 2.0     /* scale of color scheme bar */
 #define COLORBAR_RANGE_B 0.1   /* scale of color scheme bar for 2nd part */
 #define ROTATE_COLOR_SCHEME 0   /* set to 1 to draw color scheme horizontally */
@@ -234,7 +210,6 @@
 #define MAZE_MAX_NGBH 5     /* max number of neighbours of maze cell */
 #define RAND_SHIFT 0        /* seed of random number generator */
 #define MAZE_XSHIFT 0.0     /* horizontal shift of maze */
-#define MAZE_WIDTH 0.02     /* half width of maze walls */
 
 /* for compatibility with sub_wave and sub_maze */
 #define ADD_POTENTIAL 0
@@ -245,6 +220,7 @@
 /* For debugging purposes only */
 #define FLOOR 0         /* set to 1 to limit wave amplitude to VMAX */
 #define VMAX 10.0       /* max value of wave amplitude */
+
 
 #define MEAN_FLUX (PLOT == P_TOTAL_ENERGY_FLUX)||(PLOT_B == P_TOTAL_ENERGY_FLUX)
 #define REFRESH_IOR ((IOR == IOR_PERIODIC_WELLS_ROTATING)||(IOR == IOR_PERIODIC_WELLS_ROTATING_LARGE))
@@ -674,8 +650,8 @@ void animation()
 //     xy_to_ij(startright[0], startright[1], sample_right);
 //     printf("xleft = (%.3f, %.3f) xright = (%.3f, %.3f)\n", xin_left, yin_left, xin_right, yin_right);
     
-    init_wave_flat(phi, psi, xy_in);
-
+    //init_wave_flat(phi, psi, xy_in);
+    init_circular_wave(0.0, 0.0, phi, psi, xy_in);
 //     init_circular_wave(0.0, 0.0, phi, psi, xy_in);
 //     x = XMIN + (XMAX - XMIN)*rand()/RAND_MAX;
 //     y = YMIN + (YMAX - YMIN)*rand()/RAND_MAX;
@@ -706,6 +682,7 @@ void animation()
 //     add_circular_wave(-1.0, 0.0, LAMBDA, phi, psi, xy_in);
 //     add_circular_wave(1.0, -LAMBDA, 0.0, phi, psi, xy_in);
 //     add_circular_wave(-1.0, 0.0, -LAMBDA, phi, psi, xy_in);
+
     
 //     init_circular_wave_xplusminus(startleft[0], startleft[1], startright[0], startright[1], phi, psi, xy_in);
 

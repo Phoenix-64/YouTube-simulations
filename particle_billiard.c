@@ -34,6 +34,7 @@
 #include <tiffio.h>     /* Sam Leffler's libtiff library. */
 #include <omp.h>
 #include <time.h>
+#include <stdlib.h>
 
 #define MOVIE 0         /* set to 1 to generate movie */
 #define SAVE_MEMORY 1       /* set to 1 to save memory when writing tiff images */
