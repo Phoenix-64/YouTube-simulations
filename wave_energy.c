@@ -227,6 +227,18 @@
 #define WAVE_PACKET_RADIUS 0.0
 #define MAZE_WIDTH 1
 #define IOR_TOTAL_TURNS 1
+#define MUD  1
+#define HEX_NONUNIF_COMPRESSION 0
+#define HEX_NONUNIF_COMPRESSION_B 0
+#define POLY_ROTATION_ANGLE 0
+#define APOLY_B 0
+#define XDEP_POLY_ANGLE 0
+#define XDEP_POLY_ANGLE_B 0
+#define RANDOM_POLY_ANGLE_B 0
+#define YMID 0
+#define BLACK_TEXT 1
+
+
 
 #include "global_pdes.c"        /* constants and global variables */
 #include "sub_maze.c"           /* support for generating mazes */
