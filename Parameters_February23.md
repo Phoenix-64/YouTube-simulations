@@ -478,6 +478,7 @@ updated gradually.
 
 #define PAUSE 200       /* number of frames after which to pause */
 #define PSLEEP 1         /* sleep time during pause */
+
 #define SLEEP1  1        /* initial sleeping time */
 #define SLEEP2  1        /* final sleeping time */
 #define MID_FRAMES 20    /* number of still frames between parts of two-part movie */

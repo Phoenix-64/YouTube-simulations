@@ -222,6 +222,9 @@
 #define VMAX 10.0       /* max value of wave amplitude */
 
 /*custome added due to error*/
+#define ADD_WAVE_PACKET_SOURCES 1       /* set to 1 to add several sources emitting wave packets */
+#define WAVE_PACKET_SOURCE_TYPE 1       /* type of wave packet sources */
+#define N_WAVE_PACKETS 15     
 #define WAVE_PACKET_RADIUS 1.0
 
 
