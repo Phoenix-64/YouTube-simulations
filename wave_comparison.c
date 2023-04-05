@@ -220,8 +220,17 @@
 #define FLOOR 0         /* set to 1 to limit wave amplitude to VMAX */
 #define VMAX 10.0       /* max value of wave amplitude */
 
-
-
+/*Custome parameters with error undefined*/
+#define TIME_LAPSE 1     /* set to 1 to add a time-lapse movie at the end */
+                         /* so far incompatible with double movie */
+#define TIME_LAPSE_FACTOR 3    /* factor of time-lapse movie */
+#define COMPUTE_ENERGIES 1
+#define BLACK_TEXT 0
+#define YMID 0
+#define XDEP_POLY_ANGLE 0
+#define XDEP_POLY_ANGLE_B 0
+#define RANDOM_POLY_ANGLE 0
+#define RANDOM_POLY_ANGLE_B 0
 
 #include "global_pdes.c"        /* constants and global variables */
 #include "sub_maze.c"           /* support for generating mazes */
