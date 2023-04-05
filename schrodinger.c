@@ -213,7 +213,26 @@
 #define FLOOR 0         /* set to 1 to limit wave amplitude to VMAX */
 #define VMAX 10.0       /* max value of wave amplitude */
 
-
+/* added missing defines*/
+#define DRAW_BILLIARD 0
+#define DT 0.00000025
+#define VISCOSITY 2.0
+#define SPEED 0.0       /* speed of drift to the right */
+#define F_GRADIENT 0
+#define F_INTENSITY 0
+#define FIELD_REP 0
+#define DRAW_FIELD_LINES 0
+#define FIELD_LINE_FACTOR 0
+#define N_FIELD_LINES 0
+#define FIELD_LINE_WIDTH 1
+#define T_IN 0.0        /* inside temperature */
+#define T_OUT 2.0       /* outside temperature */
+#define ADD_WAVE_PACKET_SOURCES 1       /* set to 1 to add several sources emitting wave packets */
+#define WAVE_PACKET_SOURCE_TYPE 1       /* type of wave packet sources */
+#define N_WAVE_PACKETS 15     
+#define WAVE_PACKET_RADIUS 1.0
+#define MAZE_WIDTH 1
+#define IOR_TOTAL_TURNS 1
 
 
 #include "global_pdes.c"
