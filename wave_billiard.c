@@ -608,13 +608,7 @@ void animation()
     npolyline = init_polyline(MDEPTH, polyline);
     for (i=0; i<npolyline; i++) printf("vertex %i: (%.3f, %.3f)\n", i, polyline[i].x, polyline[i].y);
     
-    npolyrect = init_polyrect(polyrect);
-    for (i=0; i<npolyrect; i++) printf("polyrect vertex %i: (%.3f, %.3f) - (%.3f, %.3f)\n", i, polyrect[i].x1, polyrect[i].y1, polyrect[i].x2, polyrect[i].y2);
-    printf("Rectangles initialized\n");
-    
-    init_polyrect_arc(polyrectrot, polyarc, &npolyrect_rot, &npolyarc);
-    printf("Rotated rectangles and arcs initialized\n");
-    printf("%i rotated rectangles, %i arcs\n", npolyrect_rot, npolyarc);
+
     
     courant2 = COURANT*COURANT;
     courantb2 = COURANTB*COURANTB;
