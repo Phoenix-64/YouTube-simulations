@@ -231,9 +231,20 @@
 #define XDEP_POLY_ANGLE_B 0
 #define RANDOM_POLY_ANGLE 0
 #define RANDOM_POLY_ANGLE_B 0
+#define APOLY 0
+#define APOLY_B 0
+#define HEX_NONUNIF_COMPRESSSION 0
+#define HEX_NONUNIF_COMPRESSSION_B 0
+#define MUB 0
+#define ADD_WAVE_PACKET_SOURCES 1       /* set to 1 to add several sources emitting wave packets */
+#define WAVE_PACKET_SOURCE_TYPE 1       /* type of wave packet sources */
+#define N_WAVE_PACKETS 15     
+#define WAVE_PACKET_RADIUS 1.0
+#define MAZE_WIDTH 1
+#define IOR_TOTAL_TURNS 1
 
 #include "global_pdes.c"        /* constants and global variables */
-#include "sub_maze.c"           /* support for generating mazes */
+//#include "sub_maze.c"           /* support for generating mazes */
 #include "sub_wave.c"           /* common functions for wave_billiard, heat and schrodinger */
 #include "wave_common.c"        /* common functions for wave_billiard, wave_comparison, etc */
 #include "sub_wave_comp.c"      /* some functions specific to wave_comparison */
