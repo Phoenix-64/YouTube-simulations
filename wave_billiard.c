@@ -221,6 +221,9 @@
 #define FLOOR 0         /* set to 1 to limit wave amplitude to VMAX */
 #define VMAX 10.0       /* max value of wave amplitude */
 
+/*custome added due to error*/
+#define WAVE_PACKET_RADIUS 1.0
+
 
 #define MEAN_FLUX (PLOT == P_TOTAL_ENERGY_FLUX)||(PLOT_B == P_TOTAL_ENERGY_FLUX)
 #define REFRESH_IOR ((IOR == IOR_PERIODIC_WELLS_ROTATING)||(IOR == IOR_PERIODIC_WELLS_ROTATING_LARGE))
