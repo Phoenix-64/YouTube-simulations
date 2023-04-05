@@ -226,6 +226,7 @@
 #define N_FIELD_LINES 0
 #define FIELD_LINE_WIDTH 1
 #define T_IN 0.0        /* inside temperature */
+#define T_OUT 2.0       /* outside temperature */
 #define ADD_WAVE_PACKET_SOURCES 1       /* set to 1 to add several sources emitting wave packets */
 #define WAVE_PACKET_SOURCE_TYPE 1       /* type of wave packet sources */
 #define N_WAVE_PACKETS 15     
