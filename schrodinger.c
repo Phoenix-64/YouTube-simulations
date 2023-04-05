@@ -233,6 +233,7 @@
 #define WAVE_PACKET_RADIUS 1.0
 #define MAZE_WIDTH 1
 #define IOR_TOTAL_TURNS 1
+#define HBAR 1
 
 
 #include "global_pdes.c"
