@@ -226,6 +226,7 @@
 #define WAVE_PACKET_SOURCE_TYPE 1       /* type of wave packet sources */
 #define N_WAVE_PACKETS 15     
 #define WAVE_PACKET_RADIUS 1.0
+#define MAZE_WIDTH 1
 
 
 #define MEAN_FLUX (PLOT == P_TOTAL_ENERGY_FLUX)||(PLOT_B == P_TOTAL_ENERGY_FLUX)
