@@ -242,6 +242,8 @@
 #define WAVE_PACKET_RADIUS 1.0
 #define MAZE_WIDTH 1
 #define IOR_TOTAL_TURNS 1
+#define POLY_ROTATION_ANGLE 0
+
 
 #include "global_pdes.c"        /* constants and global variables */
 //#include "sub_maze.c"           /* support for generating mazes */
